@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="config.xsl"?>
+
+<param>
+	<globe>
+		<!-- ================================== -->
+		<!--单个CPU线程池大小，总线程会是CPU个数的倍数 -->
+		<!-- ================================== -->
+		<pool-size>32</pool-size>
+
+		<!-- ================================== -->
+		<!-- 日志跟踪最大记录数		 				-->
+		<!-- ================================== -->
+		<log-counter>100</log-counter>
+
+		<!-- ================================== -->
+		<!-- 最大空闲连接		 					-->
+		<!-- ================================== -->
+		<datasource-maxidle>20</datasource-maxidle>
+
+		<!-- ================================== -->
+		<!-- 最小空闲连接		 					-->
+		<!-- ================================== -->
+		<datasource-minidle>20</datasource-minidle>
+
+		<!-- ====================================== -->
+		<!-- 超时等待时间以毫秒为单位 6000毫秒/1000等于60秒-->
+		<!-- ====================================== -->
+		<datasource-maxwait>1000</datasource-maxwait>
+
+		<!-- ================================== -->
+		<!-- 设置为true那么在getNumActive()快要到getMaxActive()的时候，
+			系统会进行无效的Connection的回收		-->
+		<!-- ================================== -->
+		<datasource-removeabandoned>true</datasource-removeabandoned>
+
+		<!-- ================================== -->
+		<!-- 回收的Connection为设置的秒数后没有使用的Connection -->
+		<!-- ================================== -->
+		<datasource-removeabandonedtimeout>
+			180
+		</datasource-removeabandonedtimeout>
+
+		<!-- ====================================== -->
+		<!-- 是否在自动回收超时连接的时候打印连接的超时错误	-->
+		<!-- ====================================== -->
+		<datasource-logabandoned>true</datasource-logabandoned>
+
+		<!-- ====================================== -->
+		<!-- 取得连接时是否进行有效性验证					-->
+		<!-- ====================================== -->
+		<datasource-testonborrow>false</datasource-testonborrow>
+		<!-- ====================================== -->
+		<!-- WebService端口				-->
+		<!-- ====================================== -->
+		<webservice-port>8081</webservice-port>
+	</globe>
+
+	<!-- ================================== -->
+	<!-- 数据源 								-->
+	<!-- ================================== -->
+	<!--	<datasource>		-->
+	<!--  ====== 数据库类型： ORACLE = 0 INFORMIX = 1 MSSQLSERVER= 2 DB2 = 3 SYBASE = 4 =====-->
+	<!--		<dbtype>3</dbtype>-->
+	<!--		<jndi-name>guiji</jndi-name>-->
+	<!--		 ============================================-->
+	<!--		jdbc直连-->
+	<!--		400:	com.ibm.as400.access.AS400JDBCDriver-->
+	<!--				jdbc:as400://192.168.0.20:50000/dq-->
+	<!--				jtpadmin-->
+	<!--				adminconn-->
+	<!--		oracle:	oracle.jdbc.driver.OracleDriver-->
+	<!--				jdbc:oracle:thin:@192.168.0.2:1521:orcl-->
+	<!--				gjjmx12_ggj-->
+	<!--				adminconnect-->
+	<!--		sybase: com.sybase.jdbc2.jdbc.SybDataSource-->
+	<!--				jdbc:sybase:Tds:192.168.0.4:5000/gjjmx12_gsdl-->
+	<!--				jtpsoftadmin-->
+	<!--				adminconnect-->
+	<!--		uniDB2: com.ibm.db2.jcc.DB2Driver-->
+	<!--				jdbc:db2://192.168.1.190:50001/hfgjjcs-->
+	<!--		     ============================================ -->
+	<!--		<jdbc-driver>com.ibm.db2.jcc.DB2Driver</jdbc-driver>-->
+	<!--		<jdbc-url>jdbc:db2://192.168.0.2:50000/db2_gjj2</jdbc-url>-->
+	<!--		<jdbc-user>gjjmx12_nanzhou</jdbc-user>-->
+	<!--		<jdbc-password>adminconnect</jdbc-password>-->
+	<!--		-->
+	<!--===========================连接池配置=========================
+	  ========================== 初始化连接==================================-->
+	<!--		<datasource-initialsize>2</datasource-initialsize>-->
+	<!-- ======================== 最大连接数量============================-->
+	<!--		<datasource-maxactive>20</datasource-maxactive>-->
+	<!--	</datasource>-->
+
+	<datasource>
+		<dbtype>0</dbtype>
+		<jndi-name>file</jndi-name>
+		<jdbc-driver>oracle.jdbc.driver.OracleDriver</jdbc-driver>
+		<jdbc-url>jdbc:oracle:thin:@172.16.30.131:1521:orcl</jdbc-url>
+		<jdbc-user>wada</jdbc-user>
+		<jdbc-password>wada</jdbc-password>
+
+		<datasource-initialsize>2</datasource-initialsize>
+		<datasource-maxactive>20</datasource-maxactive>
+	</datasource>
+</param>
